@@ -3,6 +3,7 @@
 import React from "react"
 import Slider from "react-slick";
 import Card from "./Card";
+const API_KEY = process.env.API_KEY
 
 
 export default function MovieBar(props) {
@@ -10,7 +11,7 @@ export default function MovieBar(props) {
   
   React.useEffect(
     ()=>{
-      fetch(`https://api.themoviedb.org/3/${props.genre}?api_key=b9e4f85c3b6987a76b17bb7579bc1ac8`)
+      fetch(`https://api.themoviedb.org/3/${props.genre}?api_key=${API_KEY}`)
         .then((response) => response.json())
         .then((data) => setData(data));
     }
