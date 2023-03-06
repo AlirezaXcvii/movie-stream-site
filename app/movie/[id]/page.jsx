@@ -2,6 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 import {BsPlayFill} from 'react-icons/bs'
 import {AiFillStar} from 'react-icons/ai'
+import { nanoid } from 'nanoid'
 
 
 async function getMovie(params){
@@ -37,13 +38,13 @@ export default async function page({ params }) {
                     <div className='flex gap-4'>
                     <h3>Director:</h3>
                         {movieCredits.crew.map(crew => crew.job == 'Director' ? 
-                        <Link href={`/person/${crew.id}`}><span className='inline hover:text-red-500 cursor-pointer'>{crew.name}</span></Link> : '')}
+                        <span key={nanoid()}><Link href={`/person/${crew.id}`}><span className='inline hover:text-red-500 cursor-pointer'>{crew.name}</span></Link></span> : '')}
                     </div>
                     
                     <div className='flex flex-wrap md:gap-4'>
                     <h3>Cast:</h3>
                         {movieCredits.cast.slice(0,3).map(cast => (
-                            <Link href={`/person/${cast.id}`}><span className='hover:text-red-500 cursor-pointer'>{cast.name}</span></Link>    
+                            <span key={nanoid()}><Link href={`/person/${cast.id}`}><span className='hover:text-red-500 cursor-pointer'>{cast.name}</span></Link> </span>   
                         ))}
                     </div>
                     <div className='flex gap-4 items-center'>
