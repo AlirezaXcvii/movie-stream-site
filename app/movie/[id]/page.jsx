@@ -26,7 +26,7 @@ export default async function page({ params }) {
   return (
     <div className=''>
         <img className='absolute top-0 left-0 opacity-30 md:max-h-[500px] max-h-[300px] w-full object-cover' src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`} />
-        <div className='absolute top-0 left-0  w-full md:h-[500px] h-[300px] bg-gradient-to-t from-neutral-900 to-transparent'></div>
+        <div className='absolute top-0 left-0  w-full md:h-[500px] h-[300px] bg-gradient-to-t from-zinc-900 to-transparent'></div>
         <div className='relative max-w-[1440px] mx-auto p-4'>
             <div className='flex md:flex-row flex-col gap-4'>
                 <img className='w-[70%] self-center md:w-[260px] h-full rounded-md shadow-2xl' src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt="" />
