@@ -11,7 +11,7 @@ export default function MovieBar(props) {
   
   React.useEffect(
     ()=>{
-      fetch(`https://api.themoviedb.org/3/${props.genre}?api_key=${API_KEY}`)
+      fetch(`https://api.themoviedb.org/3/${props.genre}?api_key=b9e4f85c3b6987a76b17bb7579bc1ac8`)
         .then((response) => response.json())
         .then((data) => setData(data));
     }
