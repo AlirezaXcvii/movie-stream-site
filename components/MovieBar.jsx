@@ -76,7 +76,7 @@ export default function MovieBar(props) {
         <div className='max-w-[1400px] mx-auto'>
             {data && <Slider {...settings}>
                 {data.results.map(movie => (
-                    <div><Card key={movie.id} data={movie} /></div>
+                    <Card key={movie.id} data={movie} />
                 ))}
             </Slider>}
         </div>
