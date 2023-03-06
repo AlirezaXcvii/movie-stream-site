@@ -1,13 +1,16 @@
 'use client'
+
 // import Card from './Card'
 import React from "react"
 import Slider from "react-slick";
 import Card from "./Card";
-const API_KEY = process.env.API_KEY
+
 
 
 export default function MovieBar(props) {
   const [data , setData ] = React.useState()
+  const API_KEY = process.env.API_KEY
+  // console.log(API_KEY)
   
   React.useEffect(
     ()=>{

@@ -3,7 +3,7 @@ import Link from 'next/link'
 import React from 'react'
 
 export default function Card(props) {
-  console.log(props.data)
+  // console.log(props.data)
   return (
     <div>
       <Link href={props.data.name ? `/tv/${props.data.id}` : `/movie/${props.data.id}`}>
