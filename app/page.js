@@ -23,12 +23,12 @@ export default async function Home() {
           </p>
           <button className='bg-red-600 px-4 py-2 rounded-md'>Watch now</button>
           </div>
-          <MovieBar title='Trending' genre='trending/all/week' />
+          {/* <MovieBar title='Trending' genre='trending/all/week' />
           <MovieBar title='Popular' genre='movie/popular' />
           <MovieBar title='TV Shows' genre='tv/popular' />
           <MovieBar title='Top Rated TV SHows' genre='tv/top_rated' />
           <MovieBar title='Top Rated' genre='movie/top_rated' />
-          <MovieBar title='Upcoming' genre='movie/upcoming' />
+          <MovieBar title='Upcoming' genre='movie/upcoming' /> */}
       </div>
     </div>
   )
