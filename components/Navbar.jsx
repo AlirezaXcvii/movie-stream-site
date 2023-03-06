@@ -15,12 +15,12 @@ export default function Navbar() {
     <div className='max-w-[1400px] mx-auto p-4 h-[80px] flex justify-between items-center relative z-10'>
         <div className='flex gap-6'>
             <div className='h-[60px]'>
-                <img src='logo.png' alt='Netflix' className='h-full' />
+                <Link href='/'><img src='logo.png' alt='Netflix' className='h-full' /></Link>
             </div>
             <ul className='md:flex hidden gap-4 items-center'>
-                <Link href='/'><li>Home</li></Link>
-                <Link href='/movies'><li>Movies</li></Link>
-                <Link href='/tvs'><li>TV Shows</li></Link> 
+                <Link href='/'><li className='hover:text-red-600'>Home</li></Link>
+                <Link href='/movies'><li className='hover:text-red-600'>Movies</li></Link>
+                <Link href='/tvs'><li className='hover:text-red-600'>TV Shows</li></Link> 
             </ul>
         </div>
         <div className='md:flex hidden'>

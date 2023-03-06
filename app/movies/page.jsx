@@ -1,37 +1,25 @@
 'use client'
-import React from "react";
-import Slider from "react-slick";
+import Card from '@/components/Card';
+import React, { useEffect, useState } from 'react'
 
-export default function page() {
-    var settings = {
-        dots: false,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 4,
-        slidesToScroll: 1
-      };
+
+
+export default function Movies() {
+
+  const [movies , SetMovies] = useState([])
+
+  useEffect(() => {
+    for(let i=1; i<=5 ; i++){
+      fetch(`https://api.themoviedb.org/3/discover/movie?api_key=b9e4f85c3b6987a76b17bb7579bc1ac8&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${i}`)
+      .then((response) => response.json())
+      .then((data) => SetMovies(prev => [...prev, data.results.map(movie => movie)]))
+  }}, [])
+
   return (
-    <div>
-    <Slider {...settings}>
-      <div>
-        <h3>1</h3>
-      </div>
-      <div>
-        <h3>2</h3>
-      </div>
-      <div>
-        <h3>3</h3>
-      </div>
-      <div>
-        <h3>4</h3>
-      </div>
-      <div>
-        <h3>5</h3>
-      </div>
-      <div>
-        <h3>6</h3>
-      </div>
-    </Slider>
+    <div className='max-w-[1400px] flex flex-wrap mx-auto'>
+        {movies.length >= 0 &&  movies.map(item => item.map(movie => (
+           <Card data={movie} key={movie.id} />
+          )))}
     </div>
   )
 }

@@ -25,7 +25,7 @@ export default function MovieBar(props) {
     infinite: true,
     speed: 500,
     slidesToShow: 6,
-    slidesToScroll: 1,
+    slidesToScroll: 2,
     swipeToSlide: true,
     responsive: [
         {
@@ -34,7 +34,7 @@ export default function MovieBar(props) {
             slidesToShow: 5,
             slidesToScroll: 3,
             infinite: true,
-            dots: true
+            dots: false
           }
         },
         {
@@ -43,7 +43,7 @@ export default function MovieBar(props) {
             slidesToShow: 4,
             slidesToScroll: 3,
             infinite: true,
-            dots: true
+            dots: false
           }
         },
         {
