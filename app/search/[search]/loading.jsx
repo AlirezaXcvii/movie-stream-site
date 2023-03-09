@@ -5,7 +5,7 @@ export default function loading() {
   for (let index = 0; index < 4; index++) {
     loading.push(
     <div className='flex flex-col gap-2'>
-      <div className='w-[200px] h-[112px] bg-gray-600 rounded-md'></div>
+      <div className='w-[180px] h-[240px] bg-gray-600 rounded-md'></div>
       <div className='w-[180px] h-[12px] bg-gray-600 rounded-md'></div>
     </div>)
   }

@@ -12,14 +12,15 @@ export default function Search() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const term = `search/${searchTerm}`
-    router.push(term)
+    if (searchTerm.trim() !== '') {
+      const term = `search/${searchTerm}`
+      router.push(term)
+    }
   };
   return (
-    <form onSubmit={handleSubmit} className='flex gap-2 text-md'>
+    <form onSubmit={handleSubmit} className='w-full flex justify-between gap-2 text-md'>
       <input
-      className='bg-zinc-800 outline-none rounded-md px-4'
-      
+      className='bg-zinc-800 outline-none rounded-md px-4 w-full'
         type="text"
         value={searchTerm}
         onChange={handleSearchInput}

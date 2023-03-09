@@ -48,6 +48,9 @@ export default function Navbar() {
                 <Link href='/tvs'><li>TV Shows</li></Link>
             </ul>
             <div className='flex flex-col gap-4'>
+            <div className='p-2 cursor-pointer text-xl text-gray-200 flex items-center bg-zinc-900'>
+                <Search />
+            </div>
                 <Link href='/signin'>
                     <button className='bg-red-600 px-4 py-2 rounded-md'>Sign IN</button>
                 </Link>
