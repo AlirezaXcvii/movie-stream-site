@@ -3,12 +3,19 @@
 import Link from 'next/link'
 import React from 'react'
 import {HiMenuAlt3} from 'react-icons/hi'
+import {FiSearch} from 'react-icons/fi'
+import {CgClose} from 'react-icons/cg'
+import Search from './Search'
 
 export default function Navbar() {
     const [toggle, setToggle] = React.useState(false)
+    const [toggleSearch, setToggleSearch] = React.useState(false)
 
     function handleMenu(){
         setToggle(!toggle)
+    }
+    function handleSearch(){
+        setToggleSearch(!toggleSearch)
     }
 
   return (
@@ -23,7 +30,12 @@ export default function Navbar() {
                 <Link href='/tvs'><li className='hover:text-red-600'>TV Shows</li></Link> 
             </ul>
         </div>
-        <div className='md:flex hidden'>
+        <div className='md:flex hidden md:justify-center gap-4 items-center'>
+            <div className={`${!toggleSearch ? 'rounded-full p-2 cursor-pointer text-xl text-gray-200 flex gap-2 items-center hover:bg-zinc-900': 'rounded-md p-2 cursor-pointer text-xl text-gray-200 flex gap-2 items-center bg-zinc-900' }  `}>
+                {!toggleSearch && <FiSearch  onClick={handleSearch}/>}
+                {toggleSearch && <CgClose  onClick={handleSearch} className='hover:text-red-500'/>}
+                {toggleSearch && <Search />}
+            </div>
             <button className='bg-red-600 px-4 py-2 rounded-md'>SignIn</button>
         </div>
         <div className='md:hidden block'>
