@@ -55,7 +55,7 @@ export default function MoviePage() {
   }, []);
   
   return (
-    <div className='max-w-[1400px] flex flex-wrap mx-auto'>
+    <div className='max-w-[1400px] flex flex-wrap mx-auto justify-center'>
       {/* Render the movie results */}
       
       {movies.map(movie => (

@@ -6,7 +6,6 @@ import Slider from "react-slick";
 import Card from "./Card";
 
 
-
 export default function MovieBar(props) {
   const [data , setData ] = React.useState()
   const API_KEY = process.env.API_KEY
@@ -22,16 +21,19 @@ export default function MovieBar(props) {
   // console.log(data)
   let settings = {
     dots: false,
+    lazyLoad: true,
     infinite: true,
     speed: 500,
     slidesToShow: 6,
     slidesToScroll: 2,
     swipeToSlide: true,
+
     responsive: [
         {
           breakpoint: 1100,
           settings: {
             slidesToShow: 5,
+            lazyLoad: true,
             slidesToScroll: 3,
             infinite: true,
             dots: false
@@ -41,6 +43,7 @@ export default function MovieBar(props) {
           breakpoint: 1024,
           settings: {
             slidesToShow: 4,
+            lazyLoad: true,
             slidesToScroll: 3,
             infinite: true,
             dots: false
@@ -50,6 +53,7 @@ export default function MovieBar(props) {
           breakpoint: 750,
           settings: {
             slidesToShow: 3,
+            lazyLoad: true,
             slidesToScroll: 2,
             initialSlide: 2
           }
@@ -59,6 +63,7 @@ export default function MovieBar(props) {
           settings: {
             slidesToShow: 2,
             slidesToScroll: 2,
+            lazyLoad: true,
             initialSlide: 2
           }
         },
@@ -66,6 +71,7 @@ export default function MovieBar(props) {
           breakpoint: 380,
           settings: {
             slidesToShow: 1,
+            lazyLoad: true,
             slidesToScroll: 1
           }
         }
