@@ -36,7 +36,9 @@ export default function Navbar() {
                 {toggleSearch && <CgClose  onClick={handleSearch} className='hover:text-red-500'/>}
                 {toggleSearch && <Search />}
             </div>
-            <button className='bg-red-600 px-4 py-2 rounded-md'>SignIn</button>
+            <Link href='/login'>
+                <button className='bg-red-600 px-4 py-2 rounded-md'>SignIn</button>
+            </Link>
         </div>
         <div className='md:hidden block'>
             <HiMenuAlt3 onClick={handleMenu} className='cursor-pointer'/>

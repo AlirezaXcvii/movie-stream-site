@@ -48,7 +48,9 @@ export default async function page({ params }) {
                         ))}
                     </div>
                     <div className='flex gap-4 items-center'>
-                        <button className='w-fit px-4 py-2 bg-slate-200 rounded-sm text-black font-bold flex items-center gap-2 my-4'><BsPlayFill /> Play Now</button>
+                        <Link href={`stream/${movie.id}`}>
+                            <button className='w-fit px-4 py-2 bg-slate-200 rounded-sm text-black font-bold flex items-center gap-2 my-4'><BsPlayFill /> Play Now</button>
+                        </Link>
                         <button>Add to watch list</button>
                     </div>
                 </div>
