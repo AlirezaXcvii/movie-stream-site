@@ -36,21 +36,23 @@ export default async function page({params}) {
    media.sort((a, b) => (b.popularity || 0) - (a.popularity || 0));
    
    return (
-      <div className="max-w-[1440px] mx-auto p-4 my-4 flex md:flex-row flex-col gap-x-16">
-         <div className='md:w-1/5 bg-zinc-800 h-fit p-4 rounded-md'>
+      <div className="max-w-[1400px] mx-auto p-4 my-4 flex xl:flex-row flex-col xl:gap-x-16 gap-4">
+         <div className='xl:w-3/8 bg-zinc-800 h-fit p-4 rounded-md sm:flex sm:gap-4 xl:flex-col xl:gap-1'>
             <img className='max-h-[300px] mx-auto object-cover rounded-md' src={`https://image.tmdb.org/t/p/original${personInfo.profile_path}`} />
-            <h2 className='text-3xl mt-4'>{personInfo.name}</h2>
-            <p className="text-gray-500 my-2 text-lg line-clamp-3 md:line-clamp-none">{personInfo.biography.split('.').slice(0,2).join('.')}.</p>
-            <p className="text-gray-500 my-2 text-lg">Born: {personInfo.birthday}</p>
-            {personInfo.deathday ? (
-                  <p className="text-gray-500 my-2 text-lg">Died: {personInfo.deathday}</p>
-               ) : null
-            }
+            <div>
+               <h2 className='text-3xl mt-4'>{personInfo.name}</h2>
+               <p className="text-gray-500 my-2 text-lg line-clamp-3 md:line-clamp-none">{personInfo.biography.split('.').slice(0,2).join('.')}.</p>
+               <p className="text-gray-500 my-2 text-lg">Born: {personInfo.birthday}</p>
+               {personInfo.deathday ? (
+                     <p className="text-gray-500 my-2 text-lg">Died: {personInfo.deathday}</p>
+                  ) : null
+               }
+            </div>
          </div>
          
-         <div className='md:w-4/5'>
+         <div className='xl:w-5/8'>
             <h2 className='text-2xl'>Movies and TV Shows:</h2>
-            <div className='flex flex-wrap mx-auto'>
+            <div className='flex flex-wrap mx-auto justify-center'>
                {media.map(mediaItem => (
                   <Card data={mediaItem} key={mediaItem.id}/>
                ))}
