@@ -36,8 +36,8 @@ export default async function page({params}) {
    media.sort((a, b) => (b.popularity || 0) - (a.popularity || 0));
    
    return (
-      <div className="max-w-[1400px] mx-auto p-4 my-4 flex xl:flex-row flex-col xl:gap-x-16 gap-4">
-         <div className='xl:w-3/8 bg-zinc-800 h-fit p-4 rounded-md sm:flex sm:gap-4 xl:flex-col xl:gap-1'>
+      <div className="max-w-[1400px] mx-auto p-4 my-4 flex flex-col gap-4">
+         <div className=' bg-zinc-800 h-fit p-4 rounded-md sm:flex sm:gap-4'>
             <img className='max-h-[300px] mx-auto object-cover rounded-md' src={`https://image.tmdb.org/t/p/original${personInfo.profile_path}`} />
             <div>
                <h2 className='text-3xl mt-4'>{personInfo.name}</h2>
@@ -50,7 +50,7 @@ export default async function page({params}) {
             </div>
          </div>
          
-         <div className='xl:w-5/8'>
+         <div className=''>
             <h2 className='text-2xl'>Movies and TV Shows:</h2>
             <div className='flex flex-wrap mx-auto justify-center'>
                {media.map(mediaItem => (
