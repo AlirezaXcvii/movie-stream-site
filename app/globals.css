@@ -5,31 +5,6 @@
 @import "slick-carousel/slick/slick.css";
 @import "slick-carousel/slick/slick-theme.css";
 
-input[type="date"]::-webkit-calendar-picker-indicator {
-    display: none;
-  }
-
-.swiper-button-prev,
-.swiper-button-next {
-  background-color: transparent;
-  height: 100%;
-  width: fit-content;
-  padding: 10px;
-  /* position: absolute; */
-  top: 50%;
-  transform: translateY(-50%) translateX(25%);
-  z-index: 10;
-  transition: background-color 0.2s ease-in-out;
-}
-
-.swiper-button-prev{
-    transform: translateY(-50%) translateX(-25%); 
-}
-
-.swiper-button-prev:hover,
-.swiper-button-next:hover {
-  background-color: #222222d3;
-}
 
 /* width */
 ::-webkit-scrollbar {
@@ -45,4 +20,31 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 ::-webkit-scrollbar-thumb {
   background: rgb(63, 63, 63);
   border-radius: 1px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  background-color: transparent;
+  height: 100%;
+  width: fit-content;
+  padding: 10px;
+  /* position: absolute; */
+  top: 50%;
+  transform: translateY(-50%) translateX(25%);
+  z-index: 10;
+  transition: background-color 0.2s ease-in-out;
+  color: rgb(255, 255, 255);
+}
+
+.swiper-button-prev{
+  transform: translateY(-50%) translateX(-25%); 
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+background-color: #222222d3;
 }
