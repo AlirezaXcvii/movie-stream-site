@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import MovieBar from '@/components/MovieBar'
+import Link from 'next/link'
 const API_KEY = process.env.API_KEY
 
 const inter = Inter({ subsets: ['latin'] })
@@ -21,7 +22,7 @@ export default async function Home() {
           <p className='my-4 line-clamp-3'>
           {data.results[0].overview}
           </p>
-          <button className='bg-red-600 px-4 py-2 rounded-md'>Watch now</button>
+          <Link href={data.results[0].name ? `/tv/${data.results[0].id}` : `/movie/${data.results[0].id}`}><button className='bg-red-600 px-4 py-2 rounded-md'>Watch now</button></Link>
           </div>
           <MovieBar title='Trending' genre='trending/all/week' />
           <MovieBar title='Popular' genre='movie/popular' />
