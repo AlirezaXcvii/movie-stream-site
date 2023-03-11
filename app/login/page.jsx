@@ -4,7 +4,7 @@ import Head from "next/head";
 import Link from "next/link";
 
 
-export default function page() {
+export default function LoginPage() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [keepSignedIn, setKeepSignedIn] = useState(false);
